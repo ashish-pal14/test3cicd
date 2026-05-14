@@ -1,0 +1,17 @@
+name: checkout the code
+
+on:
+	workflow_dispatch:
+
+job:
+	job_name:
+		runs-on: ubuntu-latest
+		steps:
+			- name: checkout the code
+				uses: action/checkout@v3
+			- name: installing node
+				uses: action/setup-node@v5
+			- name: install dependencies
+				run: npm install
+			- name: test code
+				run: npm test
