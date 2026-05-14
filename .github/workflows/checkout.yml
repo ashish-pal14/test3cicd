@@ -3,7 +3,7 @@ name: checkout the code
 on:
 	workflow_dispatch:
 
-job:
+jobs:
 	job_name:
 		runs-on: ubuntu-latest
 		steps:
