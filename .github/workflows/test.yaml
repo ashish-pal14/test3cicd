@@ -7,13 +7,13 @@ on:
   workflow_dispatch: 
 
 jobs:
-  job1:
+  job8:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job 1"
 
   job2:
-	needs: job1
+	needs: job8
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job 2"
