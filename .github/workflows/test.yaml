@@ -1,21 +1,15 @@
-name: testing
+name: My Workflow
 
 on:
-	push:
-		branches:
-			- main
-	workflow_dispatch:
-
+  push:
 
 jobs:
-	job1:
-		runs-on: ubuntu-latest
-			steps:
-				- name: job 1
-					run:  echo "first job say hello "
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job 1"
 
-	job2:
-		runs-on: ubuntu-latest
-			steps:
-				- name: job 2
-					run: echo "seconf job say bye"
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job 2"
