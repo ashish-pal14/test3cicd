@@ -1,7 +1,10 @@
 name: testing
 
 on:
-	pushes: [main, workflow_dispatch]
+	pushes:
+		branches:
+			- main
+			- workflow_dispatach
 
 
 jobs:
