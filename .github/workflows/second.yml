@@ -1,0 +1,22 @@
+name: test the flow
+
+on:
+  push:
+    branches:
+      - main
+- 
+  workflow_dispatch:
+  
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greeting
+        run: echo "safas"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bye
+        run: echo "sfsa"
+    
