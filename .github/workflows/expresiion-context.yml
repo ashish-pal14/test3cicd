@@ -55,3 +55,15 @@ jobs:
     steps:
       - name: test the nev
         run: echo "${{env.shivam}}"
+
+  job7:
+    needs: [job1, job3, job5]
+    runs-on: window-latest
+    steps:
+      - name: os name
+        run: echo "${{runner.os}}"
+
+      - name: architecture name
+        run: echo "${{runner.arch}}"
+        
+        run: echo "${{runner.temp}}"
