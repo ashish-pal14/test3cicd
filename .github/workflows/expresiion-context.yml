@@ -12,6 +12,7 @@ jobs:
         run: echo "${{github.repository}}"
 
   job2:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: print the branhc
@@ -19,3 +20,10 @@ jobs:
 
       - name: print the workflow name
         run: echo "${{github.workflow}}"
+
+  job3:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the event name
+        run: echo "${{github.event_name}}"
