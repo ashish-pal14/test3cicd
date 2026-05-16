@@ -2,6 +2,9 @@ name:  expression-context
 
 on: [push, workflow_dispatch]
 
+env:
+  ashish: pal
+
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -34,4 +37,11 @@ jobs:
     steps:
       - name: print the commit name
         run: echo "${{github.sha}}"  
+
+  job5:
+    needs: job4
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing the envireonment
+        run: echo "${{env.ashish}}"
   
