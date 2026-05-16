@@ -6,5 +6,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: helllo bufdy
+      - name: print the username who triggered it
         run: echo "${{github.actor}}"
+      - name: print the repositn name
+        run: echo "${{github.repository}}"
