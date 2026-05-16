@@ -4,6 +4,7 @@ on: [push, workflow_dispatch]
 
 env:
   ashish: pal
+  shivam: pal
 
 jobs:
   job1:
@@ -23,6 +24,9 @@ jobs:
 
       - name: print the workflow name
         run: echo "${{github.workflow}}"
+
+      - name: printhing the enf
+        run: echo "${{env.shivam}}"
 
   job3:
     needs: job1
@@ -44,4 +48,10 @@ jobs:
     steps:
       - name: testing the envireonment
         run: echo "${{env.ashish}}"
-  
+
+  job6:
+    needs: [job2, job5]
+    runs-on: ubuntu-latest
+    steps:
+      - name: test the nev
+        run: echo "${{env.shivam}}"
