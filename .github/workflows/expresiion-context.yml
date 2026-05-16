@@ -66,4 +66,5 @@ jobs:
       - name: architecture name
         run: echo "${{runner.arch}}"
         
+      - name: runneing th temp
         run: echo "${{runner.temp}}"
