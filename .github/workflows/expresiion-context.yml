@@ -1,0 +1,10 @@
+name:  expression-context
+
+on: [push, workflow_dispatch]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: helllo bufdy
+        run: echo "${{github.actor}}"
