@@ -75,3 +75,6 @@ jobs:
     steps:
       - name: github secret test
         run: echo "${{secrets.KILL}}"
+
+      - name: testin no secret
+        run: echo "${{secrets.killing}}" 
