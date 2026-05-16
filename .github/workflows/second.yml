@@ -19,4 +19,18 @@ jobs:
     steps:
       - name: bye
         run: echo "sfsa"
+
+  job3:
+    needs: [job1,job2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: running 3 job
+        run: echo "running 3 job need to be aftewr  job2  onlu"
+
+  job4:
+    needs: [job1,job2,job3]
+    runs-on: ubuntu-latest
+    steps:
+      - name:  it's job 4 
+        run:  echo "it time for the 4"
     
