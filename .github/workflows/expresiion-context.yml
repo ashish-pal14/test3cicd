@@ -27,3 +27,11 @@ jobs:
     steps:
       - name: print the event name
         run: echo "${{github.event_name}}"
+
+  job4:
+    needs: job3
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the commit name
+        run: echo "${{github.sha}}"  
+  
