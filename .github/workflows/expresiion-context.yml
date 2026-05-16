@@ -16,3 +16,6 @@ jobs:
     steps:
       - name: print the branhc
         run: echo "${{github.ref}}"
+
+      - name: print the workflow name
+        run: echo "${{github.workflow}}"
