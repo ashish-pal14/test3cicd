@@ -10,3 +10,9 @@ jobs:
         run: echo "${{github.actor}}"
       - name: print the repositn name
         run: echo "${{github.repository}}"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the branhc
+        run: echo "${{github.ref}}"
