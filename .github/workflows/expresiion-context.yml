@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 
 env:
   ashish: pal
-  shivam: pal
+  shivam: reddy
 
 jobs:
   job1:
@@ -68,3 +68,10 @@ jobs:
         
       - name: runneing th temp
         run: echo "${{runner.temp}}"
+
+  job8:
+    needs: [job2, job7]
+    runs-on: ubuntu-latest
+    steps:
+      - name: github secret test
+        run: echo "${{secret.kill}}"
