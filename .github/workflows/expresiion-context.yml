@@ -58,7 +58,7 @@ jobs:
 
   job7:
     needs: [job1, job3, job5]
-    runs-on: window-latest
+    runs-on: ubuntu-latest
     steps:
       - name: os name
         run: echo "${{runner.os}}"
