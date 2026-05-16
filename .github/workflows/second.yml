@@ -28,7 +28,7 @@ jobs:
         run: echo "running 3 job need to be aftewr  job2  onlu"
 
   job4:
-    needs: job2
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name:  it's job 4 
