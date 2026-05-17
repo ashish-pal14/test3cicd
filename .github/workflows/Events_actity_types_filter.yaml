@@ -3,7 +3,7 @@ name: activity types
 on:
   push: 
     branches: 
-      [main]
+      [main, ashish]
 
 jobs:
   jon1:
