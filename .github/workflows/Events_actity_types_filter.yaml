@@ -1,0 +1,11 @@
+name: activity types
+
+on: push
+
+jobs:
+  jon1:
+   runs-on: ubuntu-latest
+   steps:
+      - name: check test
+        run: echo "${{github.actor}}"
+   
