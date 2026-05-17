@@ -5,10 +5,11 @@ on:
     branches: 
       - main
   pull_request:
-    types:
-      - closed
-      - reopened
-    
+    types: [cloased, reopened]
+  push:
+    branches-ignore:
+      - ashish
+      
       
 
 jobs:
