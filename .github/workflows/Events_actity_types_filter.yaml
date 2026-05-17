@@ -4,11 +4,15 @@ on:
   push: 
     branches: 
       - main
+    paths:
+      - '.github\**'
+      
   pull_request:
-    types:
-      - closed
-      - reopened
+    types: [closed, reopened]
     
+  
+  
+      
       
 
 jobs:
