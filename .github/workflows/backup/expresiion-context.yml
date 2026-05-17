@@ -1,0 +1,80 @@
+name:  expression-context
+
+on: [push, workflow_dispatch]
+
+env:
+  ashish: pal
+  shivam: reddy
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the username who triggered it
+        run: echo "${{github.actor}}"
+      - name: print the repositn name
+        run: echo "${{github.repository}}"
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the branhc
+        run: echo "${{github.ref}}"
+
+      - name: print the workflow name
+        run: echo "${{github.workflow}}"
+
+      - name: printhing the enf
+        run: echo "${{env.shivam}}"
+
+  job3:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the event name
+        run: echo "${{github.event_name}}"
+
+  job4:
+    needs: job3
+    runs-on: ubuntu-latest
+    steps:
+      - name: print the commit name
+        run: echo "${{github.sha}}"  
+
+  job5:
+    needs: job4
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing the envireonment
+        run: echo "${{env.ashish}}"
+
+  job6:
+    needs: [job2, job5]
+    runs-on: ubuntu-latest
+    steps:
+      - name: test the nev
+        run: echo "${{env.shivam}}"
+
+  job7:
+    needs: [job1, job3, job5]
+    runs-on: ubuntu-latest
+    steps:
+      - name: os name
+        run: echo "${{runner.os}}"
+
+      - name: architecture name
+        run: echo "${{runner.arch}}"
+        
+      - name: runneing th temp
+        run: echo "${{runner.temp}}"
+
+  job8:
+    needs: [job2, job7]
+    runs-on: ubuntu-latest
+    steps:
+      - name: github secret test
+        run: echo "${{secrets.KILL}}"
+
+      - name: testin no secret
+        run: echo "${{secrets.killing}}" 
