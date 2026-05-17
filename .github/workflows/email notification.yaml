@@ -1,0 +1,27 @@
+name: PR Email Notification
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: New Pull Request Opened
+          to: whynotdreambird@gmail.com,ashishpal7840@gmail.com
+          from: GitHub Actions
+          body: |
+            A new Pull Request has been opened.
+
+            Repository: ${{ github.repository }}
+            PR Title: ${{ github.event.pull_request.title }}
+            Opened By: ${{ github.actor }}
