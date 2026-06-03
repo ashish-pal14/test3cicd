@@ -12,4 +12,6 @@ jobs:
     steps:
       - name:  first  test
         run: echo "Hello buddy"
+        debug: true
+      
 
