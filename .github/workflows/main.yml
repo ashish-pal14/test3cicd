@@ -19,5 +19,10 @@ jobs:
           echo "Runner OS: $RUNNER_OS"
           echo "Runner Temp: $RUNNER_TEMP"
           echo "Workspace: $GITHUB_WORKSPACE"
+
+      - name: Build
+        run: |
+          echo "Version: 1.0.${{ github.run_number }}"
       
+          
 
