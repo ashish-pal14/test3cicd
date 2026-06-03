@@ -12,6 +12,12 @@ jobs:
     steps:
       - name:  first  test
         run: echo "Hello buddy"
-        debug: true
+        
+      - name: tesing the steps
+        run: |
+          echo "Runner Name: $RUNNER_NAME"
+          echo "Runner OS: $RUNNER_OS"
+          echo "Runner Temp: $RUNNER_TEMP"
+          echo "Workspace: $GITHUB_WORKSPACE"
       
 
