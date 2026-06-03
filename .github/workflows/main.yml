@@ -1,0 +1,16 @@
+name: testing the run runner number
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  first-deplay:
+    runs-on: ubuntu - latest
+
+    steps:
+      - name:  first  test
+        run: echo "Hello buddy"
+
+        
