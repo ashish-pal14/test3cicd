@@ -7,7 +7,7 @@ on:
 
 jobs:
   first-deplay:
-    runs-on: linux
+    runs-on: ubuntu-latest
 
     steps:
       - name:  first  test
