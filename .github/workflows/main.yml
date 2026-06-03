@@ -23,6 +23,12 @@ jobs:
       - name: Build
         run: |
           echo "Version: 1.0.${{ github.run_number }}"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ github.run_number }}
+          path: output/
       
-          
+
 
